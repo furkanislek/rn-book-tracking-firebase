@@ -133,7 +133,6 @@ export default function Profile() {
   const dispatchUser = () => {
     dispatch(setUserInfo(authUser?.email));
   };
-
   useEffect(() => {
     dispatchUser();
   }, [authIsLogin, authUser]);
