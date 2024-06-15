@@ -24,15 +24,16 @@ import {
   setAuthPassword,
 } from "@/components/store/Slicers/auth";
 import { useSelector, useDispatch } from "react-redux";
+import Config from "react-native-config";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCaNG81Jr1AJH8QbrpwBpjjbAznZvwigUw",
-  authDomain: "auth-books-ddff8.firebaseapp.com",
-  projectId: "auth-books-ddff8",
-  storageBucket: "auth-books-ddff8.appspot.com",
-  messagingSenderId: "967744848652",
-  appId: "1:967744848652:web:6218394e8208f925cfff29",
-  measurementId: "G-0P4NQW51MB",
+  apiKey: Config.API_KEY,
+  authDomain: Config.AUTH_DOMAIN,
+  projectId: Config.PROJECT_ID,
+  storageBucket: Config.STORAGE_BUCKET,
+  messagingSenderId: Config.MESSAGING_SENDER_ID,
+  appId: Config.APP_ID,
+  measurementId: Config.MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -172,7 +173,7 @@ export default function Profile() {
           password={authPassword}
           setPassword={dispatchPassword}
           isLogin={authIsLogin}
-          setIsLogin={setAuthIsLogin}
+          setIsLogin={dispatchIsLogin}
           handleAuthentication={handleAuthentication}
         />
       )}
