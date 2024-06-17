@@ -24,16 +24,16 @@ import {
   setAuthPassword,
 } from "@/components/store/Slicers/auth";
 import { useSelector, useDispatch } from "react-redux";
-import Config from "react-native-config";
+import config from "../../components/store/config.json";
 
 const firebaseConfig = {
-  apiKey: Config.API_KEY,
-  authDomain: Config.AUTH_DOMAIN,
-  projectId: Config.PROJECT_ID,
-  storageBucket: Config.STORAGE_BUCKET,
-  messagingSenderId: Config.MESSAGING_SENDER_ID,
-  appId: Config.APP_ID,
-  measurementId: Config.MEASUREMENT_ID,
+  apiKey: config.apiKey,
+  authDomain: config.authDomain,
+  projectId: config.projectId,
+  storageBucket: config.storageBucket,
+  messagingSenderId: config.messagingSenderId,
+  appId: config.appId,
+  measurementId: config.measurementId,
 };
 
 const app = initializeApp(firebaseConfig);
